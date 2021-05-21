@@ -40,8 +40,8 @@ void enter_suspend(unsigned int suspend_from);
 void get_dvfs_info(unsigned int domain,
 		unsigned char *info_out, unsigned int *size_out);
 void set_dvfs(unsigned int domain, unsigned int index);
-void *memcpy(void *dest, const void *src, unsigned int count);
-void *memset(void *s, int c, unsigned int count);
+void *memcpy(void *dest, const void *src, long unsigned int count);
+void *memset(void *s, int c, long unsigned int count);
 void _udelay(unsigned int us);
 unsigned int get_time(void);
 
