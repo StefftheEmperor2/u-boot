@@ -142,7 +142,7 @@
 #endif
 #define DDR_FUNC_PRINT_WINDOW				(CONFIG_DDR_FUNC_PRINT_WINDOW<<7)
 
-#define DDR_FUNC							(DDR_FUNC_D2PLL					| \
+#define DDR_FUNC							DDR_FUNC_D2PLL					| \
 											DDR_FUNC_LP						| \
 											DDR_FUNC_ZQ_PD					| \
 											DDR_FUNC_EXT_VREF				| \
@@ -150,5 +150,5 @@
 											DDR_FUNC_DDR_PLL_BYPASS			| \
 											DDR_FUNC_RDBI					| \
 											DDR_FUNC_PRINT_WINDOW			| \
-											0x8000000 						\
-											)
+											0x8000000
+
