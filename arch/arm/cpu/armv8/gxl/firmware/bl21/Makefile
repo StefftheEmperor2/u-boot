@@ -230,7 +230,7 @@ ASFLAGS_aarch32			= 	-nostdinc -ffreestanding -Wa,--fatal-warnings	\
 				-D__ASSEMBLY__		\
 				${DEFINES} ${INCLUDES}
 CFLAGS_aarch32 		= -g -Os -fno-builtin -ffreestanding -nostdinc -pedantic
-CFLAGS_aarch32 		+= -pipe -DCONFIG_ARM -D__ARM__ -mthumb -mabi=aapcs-linux -mno-thumb-interwork -mcpu=cortex-a9
+CFLAGS_aarch32 		+= -pipe -DCONFIG_ARM -D__ARM__ -mabi=aapcs-linux -mno-thumb-interwork -mcpu=cortex-a9
 CFLAGS_aarch32 		+= -mfpu=neon  -mno-long-calls -fno-stack-protector -MD -Wno-unused-function -mno-long-calls
 CFLAGS_aarch32 		+= -Wall -Werror -std=c99 -c -Os
 CFLAGS_aarch32			+= 	${DEFINES} ${INCLUDES} $(VPATH_LIST:%=-I%)

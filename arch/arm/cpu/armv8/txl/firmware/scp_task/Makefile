@@ -24,7 +24,7 @@ CFLAGS_WARN=-Wall -Werror -Wundef -Wstrict-prototypes -Wno-trigraphs      \
 CFLAGS_DEBUG=-g
 
 # CPU specific compilation flags
-CFLAGS_CPU=-march=$(ARM_ARCH) -mcpu=$(ARM_CPU) -mthumb -Os -mno-sched-prolog
+CFLAGS_CPU=-march=$(ARM_ARCH) -mcpu=$(ARM_CPU) -Os
 
 # FPU compilation flags
 CFLAGS_FPU-$(CONFIG_FPU)=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
