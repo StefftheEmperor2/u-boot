@@ -2,7 +2,6 @@
 
 .global bss_init
 
-
 bss_init:
         /* Clear bss section */
         la a0, _bss_start

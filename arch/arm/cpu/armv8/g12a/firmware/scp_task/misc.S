@@ -1,10 +1,7 @@
 .text
 
-.syntax unified
-.code 16
 
 .global bss_init
-.thumb_func
 
 bss_init:
 	mov r0, #0
