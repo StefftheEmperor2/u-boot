@@ -15,7 +15,7 @@ OBJCOPY=$(CROSS_COMPILE)objcopy
 OBJDUMP=$(CROSS_COMPILE)objdump
 
 ARM_ARCH=armv7-m
-ARM_CPU=cortex-m3
+ARM_CPU=cortex-a35
 CFLAGS_WARN=-Wall -Werror -Wundef -Wstrict-prototypes -Wno-trigraphs      \
             -fno-strict-aliasing -fno-common -fomit-frame-pointer         \
             -Werror-implicit-function-declaration -Wno-format-security    \
