@@ -67,7 +67,7 @@ int32_t meson_trustzone_efuse(struct efuse_hal_api_arg *arg)
 
 	if (arg->cmd == EFUSE_HAL_API_WRITE)
 		memcpy((void *)sharemem_input_base,
-		       (const void *)arg->buffer_phy, size);
+			(const void *)arg->buffer_phy, size);
 		asm __volatile__("" : : : "memory");
 
 	register uint64_t x0 asm("x0") = cmd;
@@ -75,20 +75,20 @@ int32_t meson_trustzone_efuse(struct efuse_hal_api_arg *arg)
 	register uint64_t x2 asm("x2") = size;
 	do {
 		asm volatile(
-		    __asmeq("%0", "x0")
-		    __asmeq("%1", "x0")
-		    __asmeq("%2", "x1")
-		    __asmeq("%3", "x2")
-		    "smc    #0\n"
-		    : "=r"(x0)
-		    : "r"(x0), "r"(x1), "r"(x2));
+			__asmeq("%0", "x0")
+			__asmeq("%1", "x0")
+			__asmeq("%2", "x1")
+			__asmeq("%3", "x2")
+			"smc    #0\n"
+			: "=r"(x0)
+			: "r"(x0), "r"(x1), "r"(x2));
 	} while (0);
 	ret = x0;
 	*retcnt = x0;
 
 	if ((arg->cmd == EFUSE_HAL_API_READ) && (ret != 0))
 		memcpy((void *)arg->buffer_phy,
-		       (const void *)sharemem_output_base, ret);
+				(const void *)sharemem_output_base, ret);
 
 	if (!ret)
 		return -1;
@@ -110,11 +110,11 @@ int32_t meson_trustzone_efuse_get_max(struct efuse_hal_api_arg *arg)
 
 	do {
 		asm volatile(
-		    __asmeq("%0", "x0")
-		    __asmeq("%1", "x0")
-		    "smc    #0\n"
-		    : "=r"(x0)
-		    : "r"(x0));
+			__asmeq("%0", "x0")
+			__asmeq("%1", "x0")
+			"smc    #0\n"
+			: "=r"(x0)
+			: "r"(x0));
 	} while (0);
 	ret = x0;
 
@@ -161,13 +161,13 @@ uint64_t meson_trustzone_efuse_check(unsigned char *addr)
 	register uint64_t x2 asm("x2") = (unsigned long)(&arg);
 	do {
 		asm volatile(
-		    __asmeq("%0", "x0")
-		    __asmeq("%1", "x0")
-		    __asmeq("%2", "x1")
-		    __asmeq("%3", "x2")
-		    "smc #0\n"
-		    : "=r"(x0)
-		    : "r"(x0), "r"(x1), "r"(x2));
+			__asmeq("%0", "x0")
+			__asmeq("%1", "x0")
+			__asmeq("%2", "x1")
+			__asmeq("%3", "x2")
+			"smc #0\n"
+			: "=r"(x0)
+			: "r"(x0), "r"(x1), "r"(x2));
 	} while (0);
 
 	ret = x0;
@@ -307,15 +307,15 @@ unsigned long aml_sec_boot_check(unsigned long nType,
 
 	do {
 		asm volatile(
-		    __asmeq("%0", "x0")
-		    __asmeq("%1", "x0")
-		    __asmeq("%2", "x1")
-		    __asmeq("%3", "x2")
-		    __asmeq("%4", "x3")
-		    __asmeq("%5", "x4")
-		    "smc #0\n"
-		    : "=r"(x0)
-		    : "r"(x0), "r"(x1), "r"(x2),"r"(x3),"r"(x4));
+			__asmeq("%0", "x0")
+			__asmeq("%1", "x0")
+			__asmeq("%2", "x1")
+			__asmeq("%3", "x2")
+			__asmeq("%4", "x3")
+			__asmeq("%5", "x4")
+			"smc #0\n"
+			: "=r"(x0)
+			: "r"(x0), "r"(x1), "r"(x2),"r"(x3),"r"(x4));
 	} while (0);
 
 	ret = x0;
