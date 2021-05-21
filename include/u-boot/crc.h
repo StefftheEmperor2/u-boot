@@ -9,6 +9,8 @@
 #ifndef _UBOOT_CRC_H
 #define _UBOOT_CRC_H
 
+#include <compiler.h> /* unit definition */
+
 /* lib/crc32.c */
 uint32_t crc32 (uint32_t, const unsigned char *, uint);
 uint32_t crc32_wd (uint32_t, const unsigned char *, uint, uint);
