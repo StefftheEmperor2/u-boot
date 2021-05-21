@@ -150,5 +150,5 @@
 											DDR_FUNC_DDR_PLL_BYPASS			| \
 											DDR_FUNC_RDBI					| \
 											DDR_FUNC_PRINT_WINDOW			| \
-											(1 << 31) 						\
+											0x8000000 						\
 											)
